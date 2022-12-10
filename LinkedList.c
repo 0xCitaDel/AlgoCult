@@ -7,6 +7,12 @@ struct Node {
     Node *next;
 };
 
+void printList(Node *list){
+    for (Node *p = list; p != NULL; p = p->next) {
+        printf("%d ", p->data);
+    }
+    printf("\n");
+}
 
 int main() {
     Node *list = NULL;
@@ -16,14 +22,7 @@ int main() {
     b.next = &c;
     c.next = NULL;
 
-    Node *p;
-    p = list;
-    printf("%d ", p->data);
-    p = p->next;
-    printf("%d ", p->data);
-    p = p->next;
-    printf("%d ", p->data);
-    printf("\n");
+    printList(list);
 
     return 0;
 }
